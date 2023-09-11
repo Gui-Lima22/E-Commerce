@@ -14,7 +14,7 @@
 @include("../navbar")
 
 <div class="bg-image">
-    <img src="{{ asset("img/teste.jpg") }}" alt="">
+    <img src="{{ asset("img/background.jpg") }}" alt="">
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
         <div class="d-flex justify-content-center align-items-center h-100">
             <div class="text-white">
