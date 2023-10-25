@@ -20,7 +20,7 @@
                 </button>
             </li>
             <li class="nav-item me-2">
-                <button type="button" class="btn btn-dark btn-rounded float-end me-2" data-mdb-ripple-color="dark">
+                <button type="button" class="btn btn-nav float-end me-2">
                     <i class="fa-solid fa-bag-shopping" style="font-size: 2.25rem;"></i>
                 </button>
             </li>

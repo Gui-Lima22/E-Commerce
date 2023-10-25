@@ -1,42 +1,24 @@
-#root,
-.actual-title {
-    margin-left: 1.5rem;
-    font-family: Georgia, serif;
-}
-
 body {
     overflow: hidden;
-    background: #e1e1e1d4 !important;
 }
 
-nav {
-    --mdb-navbar-box-shadow: 0 !important;
+.title-div {
+    padding: 10rem 5rem;
 }
 
-.form-outline {
-    border: 1px solid #ccc;
-    border-radius: 10px;
+#page-title, #page-subtitle {
+    display: flex;
+    justify-content: flex-end !important;
+    align-items: flex-start !important;
+    height: 100%;
 }
 
-hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #000, transparent);
-    margin: 20px 0;
+.text {
+    text-transform: uppercase;
+    font-family: Inter, serif;
 }
 
-hr.fade {
-    animation: fade 2s ease-in-out;
-}
+a h3 {
 
-@keyframes fade {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
+    color: var(--mdb-gray-dark) !important;
 }

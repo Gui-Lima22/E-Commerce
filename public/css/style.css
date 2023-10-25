@@ -1,0 +1,48 @@
+#root,
+.actual-title {
+    margin-left: 1.5rem;
+    font-family: Georgia, serif;
+}
+
+body {
+    background: #e1e1e1d4 !important;
+}
+
+nav {
+    --mdb-navbar-box-shadow: 0 !important;
+}
+
+.form-outline {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #000, transparent);
+    margin: 20px 0;
+}
+
+hr.fade {
+    animation: fade 2s ease-in-out;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.btn-nav {
+    border-radius: 0;
+    box-shadow: 0 0 0 0 !important;
+}
+
+

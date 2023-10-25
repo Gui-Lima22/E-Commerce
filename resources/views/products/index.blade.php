@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="{{ asset('css/home-style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/products-style.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/mdb/css/mdb.min.css') }}">
     <title>Phoenix Shop</title>
 </head>
@@ -14,22 +14,18 @@
 <div id="wrapper">
     @include("../navbar")
 
-    <div class="bg-image">
-        <img src="{{ asset("img/background.jpg") }}" alt="" style="width: auto; height: calc(100vh - 70px);">
-        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
-            <div class="title-div">
-                <h1 id="page-title" class="text">Sport Collection</h1>
-                <a href="/products" class="d-flex justify-content-end">
-                    <h3 class="text">Produtos <i class="fas fa-angle-right"></i></h3>
-                </a>
-            </div>
-        </div>
-    </div>
+    <hr class="mb-2"/>
 
+    <div class="d-flex flex-wrap justify-content-center">
+        <div id="filters"></div>
+        <div id="products" class="d-flex flex-wrap"></div>
+        <nav id="paginate" class="d-flex flex-wrap justify-content-center"></nav>
+    </div>
 </div>
 
 </body>
 <script src="{{ asset("plugins/mdb/js/mdb.min.js") }}"></script>
+<script src="{{ asset("js/products/index.js") }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://kit.fontawesome.com/7779cbeb80.js" crossorigin="anonymous"></script>
 </html>
