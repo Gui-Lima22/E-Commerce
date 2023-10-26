@@ -20,7 +20,7 @@ class ProductController extends Controller
 
     public function index(): View
     {
-        return view("products.index");
+        return view("products.list");
     }
 
     public function show($id): View
