@@ -17,8 +17,3 @@ body {
     text-transform: uppercase;
     font-family: Inter, serif;
 }
-
-a h3 {
-
-    color: var(--mdb-gray-dark) !important;
-}

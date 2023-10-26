@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\HelperException;
 use App\Services\ProductService;
 use Exception;
 use Illuminate\Contracts\View\View;
@@ -20,7 +19,9 @@ class ProductController extends Controller
 
     public function index(): View
     {
-        return view("products.list");
+        $all = $this->productService->all();
+        $leagues = $this->productService->getLeagues();
+        return view("products.list", compact("all", "leagues"));
     }
 
     public function show($id): View
@@ -41,7 +42,7 @@ class ProductController extends Controller
                 'message' => $e->getMessage()
             ];
 
-            Log::error('ProductController/allProducts . '  . $e);
+            Log::error('ProductController/list . '  . $e);
         }
 
         return response()->json($result, $result['status']);

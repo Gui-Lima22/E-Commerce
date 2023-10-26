@@ -20,7 +20,7 @@
 }
 
 .card {
-    width: calc(33.333% - 20px);
+    width: calc(25% - 20px);
     margin: 10px;
     background-color: #f0f0f0;
     border-radius: 10px;
@@ -57,4 +57,36 @@ a h3 {
     color: var(--mdb-white) !important;
     background-color: var(--mdb-dark) !important;
     border-color: var(--mdb-dark) !important;
+}
+
+#products { width: 75%; }
+
+#filters { width: 25%; }
+
+#filters, #products { padding: 20px }
+
+.filters-card { width: 100%; }
+
+.filters-list {
+    height: calc(100vh - 285px);
+    padding: 0 15px;
+    overflow: auto;
+}
+
+.filters-list, .list-collapse {
+    list-style: none;
+}
+
+.list-collapse {
+    max-height: 35vh;
+    overflow: auto;
+}
+
+.filters-items {
+    margin-bottom: 15px;
+}
+
+#btn-clear {
+    background-color: var(--mdb-gray-300);
+    color: #000;
 }

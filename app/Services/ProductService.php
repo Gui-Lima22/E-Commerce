@@ -14,6 +14,26 @@ use InvalidArgumentException;
  */
 class ProductService
 {
+    public function all()
+    {
+        $allProducts = array();
+        try {
+            $response = Http::get("127.0.0.1:8080/api/products");
+
+            if ($response->status() !== 200) {
+                Throw new InvalidArgumentException("Erro ao realizar a requisição");
+            }
+
+            $allProducts = json_decode($response->body());
+        } catch (Exception $e) {
+            Log::error("HomeService/all. " . $e->getTraceAsString());
+        }
+
+        usort($allProducts, function ($a, $b) { return strcmp($a->team, $b->team); });
+
+        return $allProducts;
+    }
+
     public function list($request): LengthAwarePaginator
     {
         $page = $request->all()['page'];
@@ -28,10 +48,10 @@ class ProductService
 
             $products = json_decode($response->body(), true);
         } catch (Exception $e) {
-            Log::error("HomeService/getAllProducts. " . $e->getTraceAsString());
+            Log::error("HomeService/list. " . $e->getTraceAsString());
         }
 
-        $perPage = 6;
+        $perPage = 8;
         $offset = ($page * $perPage) - $perPage;
 
         $dataItems = array_slice($products, $offset, $perPage);
@@ -60,5 +80,39 @@ class ProductService
         }
 
         return $product;
+    }
+
+    public function getLeagues(): array
+    {
+        return [
+            [
+                "id" => "premier-league",
+                "text" => "Premier League"
+            ],
+            [
+                "id" => "la-liga",
+                "text" => "La Liga"
+            ],
+            [
+                "id" => "serie-a",
+                "text" => "Italiano – Série A"
+            ],
+            [
+                "id" => "ligue-1",
+                "text" => "Ligue 1"
+            ],
+            [
+                "id" => "bundesliga",
+                "text" => "Bundesliga"
+            ],
+            [
+                "id" => "primeira-liga",
+                "text" => "Primeira Liga"
+            ],
+            [
+                "id" => "eredivisie",
+                "text" => "Eredivisie"
+            ]
+        ];
     }
 }
