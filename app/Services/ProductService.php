@@ -31,14 +31,15 @@ class ProductService
             Log::error("HomeService/getAllProducts. " . $e->getTraceAsString());
         }
 
-        $offset = ($page * 5) - 5;
+        $perPage = 6;
+        $offset = ($page * $perPage) - $perPage;
 
-        $dataItems = collect($products)->slice($offset, 5)->all();
+        $dataItems = collect($products)->slice($offset, $perPage)->all();
 
         return new LengthAwarePaginator(
             $dataItems,
             count($products),
-            5,
+            $perPage,
             $page,
         );
     }
