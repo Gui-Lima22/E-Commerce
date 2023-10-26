@@ -14,7 +14,7 @@ use InvalidArgumentException;
  */
 class ProductService
 {
-    public function getAllProducts($request): LengthAwarePaginator
+    public function list($request): LengthAwarePaginator
     {
         $page = $request->all()['page'];
 
@@ -26,7 +26,7 @@ class ProductService
                 Throw new InvalidArgumentException("Erro ao realizar a requisição");
             }
 
-            $products = json_decode($response->body());
+            $products = json_decode($response->body(), true);
         } catch (Exception $e) {
             Log::error("HomeService/getAllProducts. " . $e->getTraceAsString());
         }
@@ -34,7 +34,7 @@ class ProductService
         $perPage = 6;
         $offset = ($page * $perPage) - $perPage;
 
-        $dataItems = collect($products)->slice($offset, $perPage)->all();
+        $dataItems = array_slice($products, $offset, $perPage);
 
         return new LengthAwarePaginator(
             $dataItems,

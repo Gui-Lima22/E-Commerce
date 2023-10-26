@@ -18,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, "index"]);
 Route::get("/products", [ProductController::class, "index"]);
 Route::get("/product/{id}", [ProductController::class, "show"]);
-Route::post("/products/allProducts", [ProductController::class, "allProducts"]);
+Route::post("/products/list", [ProductController::class, "list"]);

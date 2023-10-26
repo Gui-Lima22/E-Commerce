@@ -29,12 +29,12 @@ class ProductController extends Controller
         return view("products.show", compact("product"));
     }
 
-    public function allProducts(Request $request): JsonResponse
+    public function list(Request $request): JsonResponse
     {
        $result['status'] = 200;
 
         try {
-            $result["data"] = $this->productService->getAllProducts($request);
+            $result["data"] = $this->productService->list($request);
         } catch (Exception $e) {
             $result = [
                 'status' => $e->getCode(),

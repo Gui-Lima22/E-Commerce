@@ -25,7 +25,7 @@
 
 </body>
 <script src="{{ asset("plugins/mdb/js/mdb.min.js") }}"></script>
-<script src="{{ asset("js/products/index.js") }}"></script>
+<script src="{{ asset("js/products/list.js") }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://kit.fontawesome.com/7779cbeb80.js" crossorigin="anonymous"></script>
 </html>
