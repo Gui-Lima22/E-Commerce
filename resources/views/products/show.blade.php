@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/navbar-style.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/mdb/css/mdb.min.css') }}">
     <title>Phoenix Shop - {{ $product->team }}</title>
 </head>

@@ -36,11 +36,18 @@ class ProductService
 
     public function list($request): LengthAwarePaginator
     {
-        $page = $request->all()['page'];
+        $data = $request->all();
+
+        $page = $data['page'];
 
         $products = array();
         try {
-            $response = Http::get("127.0.0.1:8080/api/products");
+            $response = Http::post("127.0.0.1:8080/api/products/list", [
+                "teamsFilters" => json_decode($data['teamsFilters']),
+                "leaguesFilters" => json_decode($data['leaguesFilters']),
+                "colorsFilters" => json_decode($data['colorsFilters']),
+                "orderBy" => json_decode($data['orderBy']),
+            ]);
 
             if ($response->status() !== 200) {
                 Throw new InvalidArgumentException("Erro ao realizar a requisição");

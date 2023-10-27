@@ -6,14 +6,22 @@ body {
     padding: 10rem 5rem;
 }
 
-#page-title, #page-subtitle {
+#page-title {
     display: flex;
     justify-content: flex-end !important;
     align-items: flex-start !important;
     height: 100%;
 }
 
-.text {
+.text, .home-btn {
     text-transform: uppercase;
-    font-family: Inter, serif;
+    font-family: Inter, serif !important;
+}
+
+h1 { color: #f0f0f0; }
+
+.home-btn {
+    background: #f0f0f0 !important;
+    border-radius: 0 !important;
+    font-size: 1rem !important;
 }

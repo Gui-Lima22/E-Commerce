@@ -1,21 +1,5 @@
 window.addEventListener("load", () => search());
 
-document.getElementById("btn-search").addEventListener("click", e => {
-    e.preventDefault();
-    search();
-});
-
-document.getElementById("btn-clear").addEventListener("click", e => {
-    e.preventDefault();
-
-    clearFilterById("teamsCollapse");
-    clearFilterById("leaguesCollapse");
-    clearFilterById("colorsCollapse");
-    clearFilterById("orderByCollapse", true);
-
-    search();
-});
-
 const search = (page = 1) => {
     if (!page) return;
 
@@ -132,6 +116,8 @@ const toggleItem = (e) => {
     }
 }
 
+const toggleFilter = () => document.getElementById("products").classList.toggle("w-100");
+
 const setFiltersById = (id, radio = false) => {
     const filter = [];
 
@@ -140,11 +126,4 @@ const setFiltersById = (id, radio = false) => {
     });
 
     return JSON.stringify(filter);
-}
-
-const clearFilterById = (id, radio = false) => {
-    document.getElementById(id).querySelectorAll(".form-check-input").forEach(e => {
-        if (radio) e.checked = e.id === "relevance";
-        else e.checked = false
-    });
 }

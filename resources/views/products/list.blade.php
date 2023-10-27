@@ -13,12 +13,12 @@
 </head>
 <body>
 <div id="wrapper">
-    @include("../navbar")
+    @include("../navbar", ["productsList" => true])
 
     <hr class="mb-2"/>
 
     <div class="d-flex flex-wrap justify-content-center">
-        <div id="filters" class="sidenav sidenav-primary">
+        <div id="filters" class="collapse show" style="transition: none;">
             <div class="card filters-card">
                 <hr/>
                 <ul class="filters-list">
@@ -32,12 +32,11 @@
                             @foreach($all as $item)
                                 <li class="item-list">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox"
+                                        <input class="form-check-input" type="checkbox"  onclick="search()"
                                                id="{{ $item->directory }}-{{ $item->id }}"
                                                name="{{ $item->directory }}"
                                         />
-                                        <label class="form-check-label"
-                                               for="{{ $item->directory }}-{{ $item->id }}">
+                                        <label class="form-check-label" for="{{ $item->directory }}-{{ $item->id }}">
                                             {{ $item->team }}
                                         </label>
                                     </div>
@@ -55,8 +54,12 @@
                         <ul id="leaguesCollapse" class="list-collapse collapse mt-3">
                             @foreach($leagues as $league)
                                 <li class="item-list">
-                                    <input class="form-check-input" type="checkbox" id="{{ $league['id'] }}" name="{{ $league['id'] }}"/>
-                                    <label class="form-check-label" for="{{ $league['id'] }}">{{ $league['text'] }}</label>
+                                    <input class="form-check-input" type="checkbox" id="{{ $league['id'] }}"
+                                           name="{{ $league['id'] }}" onclick="search()"
+                                    />
+                                    <label class="form-check-label" for="{{ $league['id'] }}">
+                                        {{ $league['text'] }}
+                                    </label>
                                 </li>
                             @endforeach
                         </ul>
@@ -76,40 +79,29 @@
                     <li class="filters-items">
                         <a href="#orderByCollapse" id="orderBy" class="ripple-surface w-100"
                            onclick="toggleItem(this)" role="button"
-                           aria-expanded="false" aria-controls="orderByCollapse" data-mdb-toggle="collapse">
+                           aria-expanded="true" aria-controls="orderByCollapse" data-mdb-toggle="collapse">
                             Ordenar por <i class="fa fa-angle-down float-end"></i>
                         </a>
-                        <ul id="orderByCollapse" class="list-collapse collapse mt-3">
+                        <ul id="orderByCollapse" class="list-collapse collapse show mt-3">
                             <li class="item-list">
-                                <input class="form-check-input" type="radio" id="relevance" name="orderBy" checked/>
+                                <input class="form-check-input" type="radio" id="relevance" name="orderBy" onclick="search()" checked/>
                                 <label class="form-check-label" for="relevance">Relevância</label>
                             </li>
                             <li class="item-list">
-                                <input class="form-check-input" type="radio" id="name" name="orderBy"/>
+                                <input class="form-check-input" type="radio" id="name" name="orderBy" onclick="search()"/>
                                 <label class="form-check-label" for="name">Nome</label>
                             </li>
                             <li class="item-list">
-                                <input class="form-check-input" type="radio" id="low-price" name="orderBy"/>
+                                <input class="form-check-input" type="radio" id="low-price" name="orderBy" onclick="search()"/>
                                 <label class="form-check-label" for="low-price">Menor preço</label>
                             </li>
                             <li class="item-list">
-                                <input class="form-check-input" type="radio" id="biggest-price" name="orderBy"/>
+                                <input class="form-check-input" type="radio" id="biggest-price" name="orderBy" onclick="search()"/>
                                 <label class="form-check-label" for="biggest-price">Maior preço</label>
                             </li>
                         </ul>
                     </li>
                 </ul>
-
-                <hr/>
-
-                <div class="d-flex flex-wrap justify-content-center mb-3">
-                    <button id="btn-clear" class="btn btn-secondary me-2">
-                        Limpar
-                    </button>
-                    <button id="btn-search" class="btn btn-dark">
-                        Aplicar
-                    </button>
-                </div>
             </div>
         </div>
 
