@@ -10,6 +10,13 @@
     </div>
     <div class="col-9">
         <ul class="nav float-end">
+            @if (!isset($home))
+                <li class="nav-item me-2">
+                    <a href="/" role="button">
+                        <i class="fa-solid fa-house"></i>
+                    </a>
+                </li>
+            @endif
             <li class="nav-item me-2" style="margin-top: 0.7rem !important;">
                 <div class="collapse" id="searchToggle">
                     <div class="form-outline">

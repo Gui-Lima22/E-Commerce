@@ -1,0 +1,49 @@
+body { overflow: hidden; }
+
+#main-card { width: 80%; }
+
+.product-img {
+    width: 40%;
+    padding: 5px 25px;
+}
+
+.product-info {
+    width: 60%;
+    padding: 5px 25px;
+}
+
+.mini-img {
+    width: 24.3% !important;
+    cursor: pointer;
+}
+
+#main-img { width: 74% !important; }
+
+img { border-radius: 10px; }
+
+.card {
+    background: var(--card-background) !important;
+    width: 95% !important;
+}
+
+p, a {
+    text-align: justify;
+    font-size: 18px;
+}
+
+td, th {
+    width: 35%;
+    font-size: 18px;
+}
+
+.btn-back {
+    user-select: none;
+    cursor: pointer;
+}
+
+.order-buttons {
+    position: absolute;
+    bottom: 25px;
+}
+
+.btn { font-size: 14px !important; }

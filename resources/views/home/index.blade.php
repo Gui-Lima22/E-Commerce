@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/mdb/css/mdb.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home-style.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/mdb/css/mdb.min.css') }}">
     <title>Phoenix Shop</title>
 </head>
 <body>
 <div id="wrapper">
-    @include("../navbar")
+    @include("../navbar", ["home" => true])
 
     <div class="bg-image">
         <img src="{{ asset("img/background.jpg") }}" alt="" style="width: auto; height: calc(100vh - 70px);">
@@ -29,7 +30,6 @@
 </div>
 
 </body>
-<script src="{{ asset("plugins/mdb/js/mdb.min.js") }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="https://kit.fontawesome.com/7779cbeb80.js" crossorigin="anonymous"></script>
+<script src="{{ asset("plugins/mdb/js/mdb.min.js") }}"></script>
 </html>

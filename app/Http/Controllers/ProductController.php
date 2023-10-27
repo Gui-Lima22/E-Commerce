@@ -21,7 +21,8 @@ class ProductController extends Controller
     {
         $all = $this->productService->all();
         $leagues = $this->productService->getLeagues();
-        return view("products.list", compact("all", "leagues"));
+        $colors = $this->productService->getColors();
+        return view("products.list", compact("all", "leagues", "colors"));
     }
 
     public function show($id): View

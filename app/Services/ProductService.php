@@ -58,7 +58,7 @@ class ProductService
             Log::error("HomeService/list. " . $e->getTraceAsString());
         }
 
-        $perPage = 8;
+        $perPage = 10;
         $offset = ($page * $perPage) - $perPage;
 
         $dataItems = array_slice($products, $offset, $perPage);
@@ -119,6 +119,44 @@ class ProductService
             [
                 "id" => "eredivisie",
                 "text" => "Eredivisie"
+            ]
+        ];
+    }
+
+    public function getColors(): array
+    {
+        return  [
+            [
+                "id" => "yellow",
+                "text" => "Amarelo"
+            ],
+            [
+                "id" => "blue",
+                "text" => "Azul"
+            ],
+            [
+                "id" => "white",
+                "text" => "Branco"
+            ],
+            [
+                "id" => "garnet",
+                "text" => "Garnet"
+            ],
+            [
+                "id" => "orange",
+                "text" => "Laranja"
+            ],
+            [
+                "id" => "black",
+                "text" => "Preto"
+            ],
+            [
+                "id" => "green",
+                "text" => "Verde"
+            ],
+            [
+                "id" => "red",
+                "text" => "Vermelho"
             ]
         ];
     }

@@ -59,7 +59,8 @@ const renderProductsList = (list) => {
         a.classList.add("d-flex", "justify-content-end");
 
         const h5 = document.createElement("h5");
-        h5.innerText = "Mais informações ";
+        h5.classList.add("text");
+        h5.innerText = "Comprar ";
 
         const i = document.createElement("i");
         i.classList.add("fa-solid", "fa-angle-right");
