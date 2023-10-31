@@ -8,21 +8,27 @@
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/mdb/css/mdb.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/home-style.css') }}">
-    <title>Phoenix Shop</title>
+    <link rel="stylesheet" href="{{ asset('css/cart-style.css') }}">
+    <title>Phoenix Shop - Carrinho</title>
 </head>
 <body>
 <div id="wrapper">
-    @include("../navbar", ["home" => true])
+    @include("../navbar")
 
-    <div class="bg-image">
-        <img src="{{ asset("img/background.jpg") }}" alt="" style="width: auto; height: calc(100vh - 70px);">
-        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
-            <div class="title-div">
-                <h1 id="page-title" class="text">Sport Collection</h1>
-                <button class="btn home-btn float-end" onclick="window.top.location = '/products'">
-                    Produtos
-                </button>
+    <hr class="mb-3"/>
+
+    <div class="d-flex justify-content-center align-items-center">
+        <div id="main-card" class="d-flex flex-wrap flex-row">
+            <div id="cart-list"></div>
+
+            <div id="cart-details">
+                <a href="/products" class="btn-back me-5 mb-5" role="button">
+                    <i class="fa-solid fa-angle-left"></i> Voltar
+                </a>
+
+                <h4>Detalhes da compra</h4>
+
+                <hr />
             </div>
         </div>
     </div>
@@ -32,5 +38,6 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="{{ asset("plugins/mdb/js/mdb.min.js") }}"></script>
+<script src="{{ asset("js/cart/index.js") }}"></script>
 <script src="{{ asset("js/utils.js") }}"></script>
 </html>

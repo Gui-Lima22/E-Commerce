@@ -120,11 +120,11 @@ const toggleItem = (e) => {
 const toggleFilter = () => document.getElementById("products").classList.toggle("w-100");
 
 const setFiltersById = (id, radio = false) => {
-    const filter = [];
+    let filter = [];
 
     document.getElementById(id).querySelectorAll(".form-check-input").forEach(e => {
-        if (e.checked) filter.push(radio ? e.id : e.name)
+        if (e.checked) !radio ? filter.push(e.name) : filter = e.id;
     });
 
-    return JSON.stringify(filter);
+    return !radio ? JSON.stringify(filter) : filter;
 }

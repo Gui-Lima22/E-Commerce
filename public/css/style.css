@@ -15,7 +15,7 @@
 /* Alça do scrollbar */
 ::-webkit-scrollbar-thumb {
     background: var(--mdb-gray-500);
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 /* Hover na alça do scrollbar */
@@ -73,4 +73,56 @@ a { color: var(--mdb-gray-dark) !important; }
 .fa-house {
     font-size: 1.25rem;
     padding-top: 18px;
+}
+
+.form-check-input:checked { border-color: var(--mdb-gray-dark) !important; }
+
+.form-check-input[type=radio]:checked:after {
+    border-color: var(--mdb-gray-dark) !important;;
+    background-color: var(--mdb-gray-dark) !important;;
+}
+
+.form-check-input[type=checkbox]:checked { background-color: var(--mdb-gray-dark) !important; }
+
+.form-check-input:focus:before {
+    box-shadow: 0 0 0 0 !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+.form-check-label { user-select: none; }
+
+#searchPainel {
+    position: absolute;
+    background-color: var(--card-background);
+    z-index: 9999;
+    list-style: none;
+    border-radius: 10px;
+    width: 10.5%;
+    padding: 0 !important;
+    max-height: 25vh;
+    overflow-x: auto;
+}
+
+#searchPainel li {
+    border-bottom: 1px solid var(--background-color);
+    padding: 10px;
+}
+
+#searchPainel li:last-child {
+    border-bottom: 0 !important;
+}
+
+.btn .badge {
+    top: 5px !important;
+    font-size: 0.75rem !important;
+}
+
+.font-bold { font-weight: bold !important; }
+
+.btn-back {
+    user-select: none;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
 }

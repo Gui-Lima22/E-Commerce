@@ -20,7 +20,7 @@
             <li class="nav-item me-2" style="margin-top: 0.7rem !important;">
                 <div class="collapse" id="searchToggle">
                     <div class="form-outline">
-                        <input class="form-control" type="text" id="search">
+                        <input class="form-control" type="text" id="search" oninput="searchProducts(this)" autocomplete="off">
                         <label class="form-label" for="search" style="margin-left: 0;">Pesquisar</label>
                     </div>
                 </div>
@@ -33,9 +33,9 @@
                 </button>
             </li>
             <li class="nav-item me-2">
-                <button type="button" class="btn btn-nav float-end me-2">
-                    <i class="fa-solid fa-bag-shopping" style="font-size: 1.9rem;"></i>
-                </button>
+                <a id="cart-btn" type="button" class="btn btn-nav float-end me-2" href="/cart">
+                    <i class="fa-solid fa-cart-shopping" style="font-size: 1.5rem; margin-top: 0.5rem"></i>
+                </a>
             </li>
         </ul>
     </div>

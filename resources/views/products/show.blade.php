@@ -9,17 +9,24 @@
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/mdb/css/mdb.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/show-style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/products-show-style.css') }}">
     <title>Phoenix Shop - {{ $product->team }}</title>
 </head>
 <body>
 <div id="wrapper">
+    <div class="toast fade mx-auto" id="toast" role="alert" aria-live="assertive" aria-atomic="true" data-mdb-stacking="true"
+        data-mdb-autohide="true" data-mdb-delay="1000" data-mdb-append-to-body="true" data-mdb-width="350px"
+    >
+        <div class="toast-body">Produto adicionado ao carrinho!</div>
+    </div>
+
     @include("../navbar")
 
     <hr class="mb-3"/>
 
     <div class="d-flex justify-content-center align-items-center">
         <div class="card">
+            <input type="hidden" id="id" value="{{ $product->id }}" />
             <div class="card-body d-flex flex-wrap">
                 <div class="product-img d-flex flex-wrap justify-content-end">
                     <a href="/products" class="btn-back me-5" role="button">
@@ -70,10 +77,10 @@
                     </table>
 
                     <div class="order-buttons">
-                        <button class="btn btn-dark me-2">
+                        <button id="buy" class="btn btn-dark me-2">
                            Comprar
                         </button>
-                        <button class="btn btn-light">
+                        <button id="add-cart" class="btn btn-light">
                             Adicionar ao carrinho
                         </button>
                     </div>
@@ -88,4 +95,5 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="{{ asset("plugins/mdb/js/mdb.min.js") }}"></script>
 <script src="{{ asset("js/products/show.js") }}"></script>
+<script src="{{ asset("js/utils.js") }}"></script>
 </html>

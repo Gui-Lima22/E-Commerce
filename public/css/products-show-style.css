@@ -24,6 +24,8 @@ img { border-radius: 10px; }
 .card {
     background: var(--card-background) !important;
     width: 95% !important;
+    height: 85vh;
+    max-height: 85vh;
 }
 
 p, a {
@@ -36,14 +38,18 @@ td, th {
     font-size: 18px;
 }
 
-.btn-back {
-    user-select: none;
-    cursor: pointer;
-}
-
 .order-buttons {
     position: absolute;
     bottom: 25px;
 }
 
 .btn { font-size: 14px !important; }
+
+.toast {
+    position: absolute;
+    z-index: 9999999;
+    right: 10px;
+    top: 10px;
+    background: var(--mdb-gray-dark);
+    color: white;
+}

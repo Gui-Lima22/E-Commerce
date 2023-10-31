@@ -44,23 +44,6 @@
     color: #000;
 }
 
-.form-check-input:checked { border-color: var(--mdb-gray-dark) !important; }
-
-.form-check-input[type=radio]:checked:after {
-    border-color: var(--mdb-gray-dark) !important;;
-    background-color: var(--mdb-gray-dark) !important;;
-}
-
-.form-check-input[type=checkbox]:checked { background-color: var(--mdb-gray-dark) !important; }
-
-.form-check-input:focus:before {
-    box-shadow: 0 0 0 0 !important;
-    transform: none !important;
-    transition: none !important;
-}
-
-.form-check-label { user-select: none; }
-
 @media (max-width: 1400px) {
     #products { width: 75%; }
 

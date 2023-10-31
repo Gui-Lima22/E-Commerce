@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/mdb/css/mdb.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/list-style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/products-list-style.css') }}">
     <title>Phoenix Shop</title>
 </head>
 <body>
@@ -128,4 +128,5 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="{{ asset("plugins/mdb/js/mdb.min.js") }}"></script>
 <script src="{{ asset("js/products/list.js") }}"></script>
+<script src="{{ asset("js/utils.js") }}"></script>
 </html>

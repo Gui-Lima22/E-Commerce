@@ -48,4 +48,40 @@ class ProductController extends Controller
 
         return response()->json($result, $result['status']);
     }
+
+    public function all(): JsonResponse
+    {
+       $result['status'] = 200;
+
+        try {
+            $result["data"] = $this->productService->all();
+        } catch (Exception $e) {
+            $result = [
+                'status' => $e->getCode(),
+                'message' => $e->getMessage()
+            ];
+
+            Log::error('ProductController/all . '  . $e);
+        }
+
+        return response()->json($result, $result['status']);
+    }
+
+    public function getById($id): JsonResponse
+    {
+       $result['status'] = 200;
+
+        try {
+            $result["data"] = $this->productService->getById($id);
+        } catch (Exception $e) {
+            $result = [
+                'status' => $e->getCode(),
+                'message' => $e->getMessage()
+            ];
+
+            Log::error('ProductController/getById . '  . $e);
+        }
+
+        return response()->json($result, $result['status']);
+    }
 }
