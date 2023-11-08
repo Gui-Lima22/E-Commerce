@@ -46,7 +46,7 @@ class ProductService
                 "teamsFilters" => json_decode($data['teamsFilters']),
                 "leaguesFilters" => json_decode($data['leaguesFilters']),
                 "colorsFilters" => json_decode($data['colorsFilters']),
-                "orderBy" => json_decode($data['orderBy']),
+                "orderBy" => $data['orderBy'],
             ]);
 
             if ($response->status() !== 200) {
