@@ -44,9 +44,6 @@ window.addEventListener("load", () => {
 
 const renderCartList = () => {
     cartItems.map(item => {
-        item.size = "M";
-        item.quantity = 1;
-
         let color = "";
         item.color.map(c => !color ? color = Colors[c] : color += ", " + Colors[c]);
 
@@ -122,7 +119,7 @@ const renderCartList = () => {
         input.id = "quantity";
         input.min = "0";
         input.max = item.storage;
-        input.value = "1";
+        input.value = item.quantity;
         input.autocomplete = "off";
         input.oninput = (e) => changeQnt(e, item.id);
 
@@ -265,7 +262,10 @@ const changeQnt = (e, itemId) => {
 }
 
 const sendMessage = () => {
-    window.open(`https://wa.me/+5511946353943?text=teste`, '_blank');
+    const phone = "+5511946353943"
+    const message = "teste";
+
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
 
     // localStorage.removeItem("cart-list");
     window.top.location = "/products";

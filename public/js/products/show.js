@@ -22,7 +22,12 @@ const setItemOnLocalStorage = async (e, buy = false) => {
 
     const items = JSON.parse(localStorage.getItem("cart-list")) ?? [];
 
-    items.push(product);
+    if (product) {
+        const foundItem = items.find(item => item.id === product.id);
+
+        if (foundItem) foundItem.quantity += 1;
+        else items.push({ ...product, size: "M", quantity: 1 });
+    }
 
     localStorage.setItem("cart-list", JSON.stringify(items));
 
