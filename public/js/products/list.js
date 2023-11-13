@@ -35,7 +35,7 @@ const renderProductsList = (list) => {
 
         const img = document.createElement("img");
         img.classList.add("card-img-top");
-        img.src = "img/real-madrid/1.jpg";
+        img.src = `img/${item.directory}/1.jpg`;
         img.alt = "";
 
         divOverlay.append(img);

@@ -39,10 +39,10 @@
                         <img class="mini-img me-1" src="{{ asset("img/$product->directory/1.jpg") }}" alt=""
                              onclick="toggleMainImg(this)">
 
-                        <img class="mini-img me-1" src="{{ asset("img/$product->directory/1.jpg") }}" alt=""
+                        <img class="mini-img me-1" src="{{ asset("img/$product->directory/2.jpg") }}" alt=""
                              onclick="toggleMainImg(this)">
 
-                        <img class="mini-img" src="{{ asset("img/$product->directory/1.jpg") }}" alt=""
+                        <img class="mini-img" src="{{ asset("img/$product->directory/3.jpg") }}" alt=""
                              onclick="toggleMainImg(this)">
                     </div>
                 </div>
