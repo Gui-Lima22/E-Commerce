@@ -1,9 +1,4 @@
-const toggleMainImg = (e) => {
-    const newImg = e.src;
-
-    e.src = document.getElementById("main-img").src;
-    document.getElementById("main-img").src = newImg;
-}
+const toggleMainImg = (e) => document.getElementById("main-img").src = e.src;
 
 document.getElementById("add-cart").addEventListener("click", e => setItemOnLocalStorage(e));
 
